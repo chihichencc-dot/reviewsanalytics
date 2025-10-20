@@ -24,4 +24,12 @@ for d in data:
 
 print('There are', len(new), 'reviews with less than 100 charactors')
 
-print(new[0])
+
+good = []
+for d in data:
+	if 'good' in d:
+		good.append(d)
+
+print('There are', len(good), 'positive reviews')
+
+print(good[0])
