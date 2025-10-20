@@ -33,3 +33,29 @@ for d in data:
 print('There are', len(good), 'positive reviews')
 
 print(good[0])
+
+good2 = [d for d in data if 'good' in d]
+#list comprehension 
+good3 = [1 for d in data if 'good' in d]
+#print(good3)
+
+reviews = [d for d in data] 
+
+bad = ['bad' in d for d in data]
+
+bad2 = []
+for d in data:
+	bad2.append('bad' in d)
+
+print(reviews)
+
+
+
+
+
+
+
+
+
+
+
