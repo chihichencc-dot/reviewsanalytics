@@ -7,7 +7,7 @@ with open ('reviews.txt', 'r') as f:
 		#if count % 1000 == 0:
 			#print(len(data))
 
-print('finish file reading, and there is', len(data), 'data in total' )
+print('Finish file reading, and there are', len(data), 'reviews' )
 
 sum_len = 0
 for d in data:
@@ -15,6 +15,13 @@ for d in data:
 	
 
 len_avg = sum_len/len(data)
-print('the average length of the review is:', len_avg)
+print('The average length of the review is:', len_avg)
 
-print(data[0])
+new = []
+for d in data:
+	if len(d) < 100:
+		new.append(d)
+
+print('There are', len(new), 'reviews with less than 100 charactors')
+
+print(new[0])
