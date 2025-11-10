@@ -7,7 +7,34 @@ with open ('reviews.txt', 'r') as f:
 		#if count % 1000 == 0:
 			#print(len(data))
 
-print('Finish file reading, and there are', len(data), 'reviews' )
+#print('Finish file reading, and there are', len(data), 'reviews' )
+
+wc = {}
+for d in data:
+	words = d.split()
+	for word in words:
+		if word in wc:
+			wc[word] += 1
+		else:
+			wc[word] = 1
+
+for word in wc:
+	if wc[word]>1000000:
+		print(word, wc[word])
+#print(len(wc))
+print(wc['Allen'])
+
+while True:
+	word = input('which word you would like to look up:')
+	if word == 'q':
+		break
+	if word in wc:
+		print(word, 'appears', wc[word], 'times')
+	else:
+		print('not appears')
+
+print('thanks!')
+
 
 sum_len = 0
 for d in data:
